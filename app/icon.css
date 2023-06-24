@@ -1,0 +1,24 @@
+.login-form-lock {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background: url(images/lock.svg) #FFF2F2 no-repeat center;
+  }
+
+  .user {
+    width: 18px;
+    height: 18px;
+    background: url(images/user.svg) no-repeat center;
+  }
+
+  .password {
+    width: 18px;
+    height: 18px;
+    background: url(images/password.svg) no-repeat center;
+  }
+
+  .alert {
+    width: 18px;
+    height: 18px;
+    background: url(images/alert-input-form.svg) no-repeat center;
+  }
