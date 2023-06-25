@@ -1,7 +1,7 @@
-<div class="limiter">
+<div class="limiter" ng-controller="loginCtrl">
     <div class="container-login">
         <div class="wrap-login">
-            <form class="login-form validate-form" name="loginForm">
+            <form class="login-form validate-form" name="loginForm" ng-submit="performLogin()">
                 <div class="login-frame">
                     <div class="login-logo"></div>
                     <div class="login-main-form">
@@ -12,22 +12,49 @@
                             </span>
                         </div>
                         <div class="d-flex flex-column">
-                            <div class="wrap-input validate-input">
+                            <div class="wrap-input"  ng-class="{ invalid: loginForm.username.$invalid && loginForm.username.$dirty, valid: loginForm.username.$valid && loginForm.username.$dirty }">
                                 <span class="user"></span>
-                                <input type="text" name="username" placeholder="Username">
+                                <input type="text" name="username" placeholder="Username" ng-model="username"
+                                    ng-required="true" ng-pattern="/^[a-zA-Z]+ [a-zA-Z]+$/">
+                                <span ng-show="loginForm.username.$valid && loginForm.username.$dirty" class="check"></span>
                             </div>
-                            <div class="wrap-input validate-input mb-0">
+                            <div class="wrap-input mb-0" ng-class="{ invalid: loginForm.password.$invalid && loginForm.password.$dirty, valid: loginForm.password.$valid && loginForm.password.$dirty }">
                                 <span class="password"></span>
-                                <input type="password" name="password" placeholder="Password">
+                                <input type="password" name="password" placeholder="Password" ng-model="password"
+                                    ng-required="true" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/">
+                                <span ng-show="loginForm.password.$valid && loginForm.password.$dirty" class="check"></span>
+                            </div>
+                            <div class="d-flex flex-column align-items-start" ng-show="loginForm.$dirty && loginForm.$invalid">
+                                <p class="login-alert"
+                                    ng-show="loginForm.username.$error.required && loginForm.username.$dirty">
+                                    <span class="alert"></span>
+                                    <span>Please enter username</span>
+                                </p>
+                                <p class="login-alert"
+                                    ng-show="loginForm.password.$error.required && loginForm.password.$dirty">
+                                    <span class="alert"></span>
+                                    <span>Please enter password</span>
+                                </p>
+                                <p class="login-alert"
+                                    ng-show="loginForm.username.$error.pattern && loginForm.username.$dirty">
+                                    <span class="alert"></span>
+                                    <span>Please enter valid Username</span>
+                                </p>
+                                <p class="login-alert"
+                                    ng-show="loginForm.password.$error.pattern && loginForm.password.$dirty">
+                                    <span class="alert"></span>
+                                    <span>Please enter atleast 8 character with number, symbol, capital and small
+                                        letter</span>
+                                </p>
                             </div>
                             <div class="forget">
-                                    <a href="#">
-                                        Forgot Password?
-                                    </a>
+                                <a href="#">
+                                    Forgot Password?
+                                </a>
                             </div>
                         </div>
                         <div class="container-login-form-btn">
-                            <button class="login-form-btn">
+                            <button type="submit" class="login-form-btn">
                                 Login
                             </button>
                         </div>

@@ -6,6 +6,23 @@
   box-sizing: border-box
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #ccc; 
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b7b7b7; 
+}
+
 body,
 html {
   height: 100%;
@@ -37,7 +54,8 @@ li {
 
 input {
   outline: none;
-  border: none
+  border: none;
+  width: 100%;
 }
 
 textarea {
@@ -237,6 +255,14 @@ textarea {
   color: #000;
 }
 
+.wrap-input.invalid{
+  border: 1px solid var(--components-form-inputs-borders-default-border, #FC695C);
+}
+
+.wrap-input.valid{
+  border: 1px solid var(--components-form-inputs-borders-default-border, #00A364);
+}
+
 .wrap-input input::placeholder {
   color: var(--components-form-inputs-text-icons-placeholder-text, #999);
   font-size: 14px;
@@ -262,7 +288,16 @@ textarea {
 
 .login-alert {
   font-size: 12px;
-  color: #D94E3B;
+  color: #C20006;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login-alert:first-child {
+  margin-top: 12px;
 }
 
 .container-login-form-btn {

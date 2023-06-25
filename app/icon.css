@@ -21,4 +21,11 @@
     width: 18px;
     height: 18px;
     background: url(images/alert-input-form.svg) no-repeat center;
+    margin: 0;
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+    background: url(images/check-circled.svg) no-repeat center;
   }
