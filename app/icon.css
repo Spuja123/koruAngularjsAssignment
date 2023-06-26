@@ -29,3 +29,21 @@
     height: 20px;
     background: url(images/check-circled.svg) no-repeat center;
   }
+
+  .info {
+    width: 18px;
+    height: 18px;
+    background: url(images/info.svg) no-repeat center;
+  }
+
+  .delete {
+      width: 12px;
+      height: 12px;
+      background: url(images/delete.svg) no-repeat center;
+  }
+
+  .reorder {
+    width: 12px;
+    height: 12px;
+    background: url(images/reorder.svg) no-repeat center;
+  }

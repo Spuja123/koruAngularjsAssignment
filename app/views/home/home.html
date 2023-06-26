@@ -1,5 +1,43 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="homeCtrl">
+  <nav class="navbar">
+    <div class="home-logo"></div>
+  </nav>
+  <div class="home-container">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Lorem ipsum is a dummy text</div>
+        <div>
+          <button class="btn btn-sm btn-delete btn-danger" ng-disabled="canDelete">Delete</button>
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-bordered" st-table="loginDetails" st-sort-default="true">
+          <thead>
+            <tr>
+              <th><input class="vertical-center" type="checkbox" ng-model="checkall" ng-change="checkUncheckAll()" /></th>
+              <th st-sort="username">User Name</th>
+              <th st-sort="phone">Phone Number</th>
+              <th st-sort="email">Email Id</th>
+              <th class="d-flex align-items-center justify-content-end">Options <div class="info"></div></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in loginDetails">
+              <td><input class="vertical-center" type="checkbox" value="{{item.id}}" ng-model="item.checked" ng-change="updateCheckall()"/></td>
+              <td>{{item.username}}</td>
+              <td>{{item.phone}}</td>
+              <td>{{item.email}}</td>
+              <td>
+                <div class="btn-actions">
+                  <button class="btn btn-sm btn-outline-dark"><i class="delete"></i></button>
+                  <button class="btn btn-sm btn-outline-dark"><i class="reorder"></i></button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>  
+  </div>
+  
+</div>
