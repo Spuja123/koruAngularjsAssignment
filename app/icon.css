@@ -1,49 +1,67 @@
 .login-form-lock {
-    width: 48px;
-    height: 48px;
-    border-radius: 48px;
-    background: url(images/lock.svg) #FFF2F2 no-repeat center;
-  }
+  width: 48px;
+  height: 48px;
+  border-radius: 48px;
+  background: url(images/lock.svg) #FFF2F2 no-repeat center;
+}
 
-  .user {
-    width: 18px;
-    height: 18px;
-    background: url(images/user.svg) no-repeat center;
-  }
+.user {
+  width: 18px;
+  height: 18px;
+  background: url(images/user.svg) no-repeat center;
+}
 
-  .password {
-    width: 18px;
-    height: 18px;
-    background: url(images/password.svg) no-repeat center;
-  }
+.password {
+  width: 18px;
+  height: 18px;
+  background: url(images/password.svg) no-repeat center;
+}
 
-  .alert {
-    width: 18px;
-    height: 18px;
-    background: url(images/alert-input-form.svg) no-repeat center;
-    margin: 0;
-  }
+.alert {
+  width: 18px;
+  height: 18px;
+  background: url(images/alert-input-form.svg) no-repeat center;
+  margin: 0;
+}
 
-  .check {
-    width: 20px;
-    height: 20px;
-    background: url(images/check-circled.svg) no-repeat center;
-  }
+.check {
+  width: 20px;
+  height: 20px;
+  background: url(images/check-circled.svg) no-repeat center;
+}
 
-  .info {
-    width: 18px;
-    height: 18px;
-    background: url(images/info.svg) no-repeat center;
-  }
+.info {
+  width: 18px;
+  height: 18px;
+  background: url(images/info.svg) no-repeat center;
+}
 
-  .delete {
-      width: 12px;
-      height: 12px;
-      background: url(images/delete.svg) no-repeat center;
-  }
+.delete {
+  width: 12px;
+  height: 12px;
+  background: url(images/delete.svg) no-repeat center;
+}
 
-  .reorder {
-    width: 12px;
-    height: 12px;
-    background: url(images/reorder.svg) no-repeat center;
-  }
+.reorder {
+  width: 12px;
+  height: 12px;
+  background: url(images/reorder.svg) no-repeat center;
+}
+
+.confirmation {
+  width: 24px;
+  height: 24px;
+  background: url(images/confirmation-toast.svg) no-repeat center;
+}
+
+.delete-alert {
+  width: 42px;
+  height: 95px;
+  background: url(images/delete-alert.png) no-repeat center;
+}
+
+.sort {
+  width: 12px;
+  height: 12px;
+  background: url(images/sort.svg) no-repeat center;
+}

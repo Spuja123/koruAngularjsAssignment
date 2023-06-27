@@ -12,19 +12,25 @@
                             </span>
                         </div>
                         <div class="d-flex flex-column">
-                            <div class="wrap-input"  ng-class="{ invalid: loginForm.username.$invalid && loginForm.username.$dirty, valid: loginForm.username.$valid && loginForm.username.$dirty }">
+                            <div class="wrap-input"
+                                ng-class="{ invalid: loginForm.username.$invalid && loginForm.username.$dirty, valid: loginForm.username.$valid && loginForm.username.$dirty }">
                                 <span class="user"></span>
                                 <input type="text" name="username" placeholder="Username" ng-model="username"
                                     ng-required="true" ng-pattern="/^[a-zA-Z]+ [a-zA-Z]+$/">
-                                <span ng-show="loginForm.username.$valid && loginForm.username.$dirty" class="check"></span>
+                                <span ng-show="loginForm.username.$valid && loginForm.username.$dirty"
+                                    class="check"></span>
                             </div>
-                            <div class="wrap-input mb-0" ng-class="{ invalid: loginForm.password.$invalid && loginForm.password.$dirty, valid: loginForm.password.$valid && loginForm.password.$dirty }">
+                            <div class="wrap-input mb-0"
+                                ng-class="{ invalid: loginForm.password.$invalid && loginForm.password.$dirty, valid: loginForm.password.$valid && loginForm.password.$dirty }">
                                 <span class="password"></span>
                                 <input type="password" name="password" placeholder="Password" ng-model="password"
-                                    ng-required="true" ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/">
-                                <span ng-show="loginForm.password.$valid && loginForm.password.$dirty" class="check"></span>
+                                    ng-required="true"
+                                    ng-pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/">
+                                <span ng-show="loginForm.password.$valid && loginForm.password.$dirty"
+                                    class="check"></span>
                             </div>
-                            <div class="d-flex flex-column align-items-start" ng-show="loginForm.$dirty && loginForm.$invalid">
+                            <div class="d-flex flex-column align-items-start"
+                                ng-show="loginForm.$dirty && loginForm.$invalid">
                                 <p class="login-alert"
                                     ng-show="loginForm.username.$error.required && loginForm.username.$dirty">
                                     <span class="alert"></span>
@@ -79,7 +85,8 @@
                         </div>
                     </div>
                     <div class="login-small-text">
-                        <pre>Internet and online based digital technologies such as desktop computers, mobile phones and other</pre>
+                        <p>Internet and online based digital technologies such as desktop computers, mobile phones and
+                            other</p>
                     </div>
                 </div>
             </div>

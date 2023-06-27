@@ -7,37 +7,60 @@
       <div class="card-header">
         <div class="card-title">Lorem ipsum is a dummy text</div>
         <div>
-          <button class="btn btn-sm btn-delete btn-danger" ng-disabled="canDelete">Delete</button>
+          <button class="btn btn-sm btn-delete btn-danger" ng-disabled="canDelete"
+            ng-click="deleteChecked()">Delete</button>
         </div>
       </div>
       <div class="card-body p-0">
-        <table class="table table-bordered" st-table="loginDetails" st-sort-default="true">
+        <table class="table table-bordered draggable-table">
           <thead>
             <tr>
-              <th><input class="vertical-center" type="checkbox" ng-model="checkall" ng-change="checkUncheckAll()" /></th>
-              <th st-sort="username">User Name</th>
-              <th st-sort="phone">Phone Number</th>
-              <th st-sort="email">Email Id</th>
-              <th class="d-flex align-items-center justify-content-end">Options <div class="info"></div></th>
+              <th><input class="vertical-center" type="checkbox" ng-model="checkall" ng-change="checkUncheckAll()" />
+              </th>
+              <th>
+                <div class="d-flex align-items-center justify-content-start" ng-click="sortBy('username')">
+                  <div>User Name</div>
+                  <div class="sort"></div>
+                </div>
+              </th>
+              <th>
+                <div class="d-flex align-items-center justify-content-start" ng-click="sortBy('phone')">
+                  <div>Phone Number</div>
+                  <div class="sort"></div>
+                </div>
+              </th>
+              <th>
+                <div class="d-flex align-items-center justify-content-start" ng-click="sortBy('email')">
+                  <div>Email Id</div>
+                  <div class="sort"></div>
+                </div>
+              </th>
+              <th>
+                <div class="d-flex align-items-center justify-content-end">
+                  <div>Options</div>
+                  <div class="info"></div>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="item in loginDetails">
-              <td><input class="vertical-center" type="checkbox" value="{{item.id}}" ng-model="item.checked" ng-change="updateCheckall()"/></td>
+            <tr ng-repeat="item in loginDetails | orderBy:colName:reverse">
+              <td><input class="vertical-center" type="checkbox" value="{{item.id}}" ng-model="item.checked"
+                  ng-change="updateCheckall()" /></td>
               <td>{{item.username}}</td>
               <td>{{item.phone}}</td>
               <td>{{item.email}}</td>
               <td>
                 <div class="btn-actions">
-                  <button class="btn btn-sm btn-outline-dark"><i class="delete"></i></button>
-                  <button class="btn btn-sm btn-outline-dark"><i class="reorder"></i></button>
+                  <button class="btn btn-sm btn-outline-dark" ng-click="deleteUser($index)"><i
+                      class="delete"></i></button>
+                  <button class="btn btn-sm btn-outline-dark drag-handle"><i class="reorder drag-handle"></i></button>
                 </div>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>  
+    </div>
   </div>
-  
 </div>
